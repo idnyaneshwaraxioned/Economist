@@ -10,6 +10,9 @@
   .wrapper{
     @include flex (flex,flex-start,center);  
     text-align: center;
+    @include media($large){
+      justify-content: space-between;
+    }
   }
   &__logo{
     a {
@@ -31,6 +34,20 @@
     }
     &__menu {
       @include flex (flex,center,center);
+      @include media($large){
+        width: 100%;
+        padding: 40px 0;
+        display: none;
+				flex-direction: column;
+				@include position(absolute,0,0);
+				z-index: 5;
+				background-color: $secondary-color;
+				&__item {
+					width: 100%;
+					padding: 20px 0;
+					text-align: center;
+				}
+      }
      &__item {
        position: relative;
        &:hover &__dropdown{
@@ -42,6 +59,9 @@
          @include position (absolute,$top:50%,$right:15%){
            transform: translateY(-50%);
          }
+         @include media($large){
+          @include position (absolute,$top:50%,$right: 44%); 
+         }
          color: $primary-color;
          font-size: 12px;
          font-family: fontAwesome;
@@ -52,6 +72,9 @@
       &__dropdown{
         display: none;
         @include position(absolute);
+        @include media($large){
+          @include position(relative);
+        }
         z-index: 5;
         background-color: $bg-red;
         &__item {
@@ -63,15 +86,32 @@
      }
     }
     &__submenu {
-      @include flex (flex,center,center);
         display: none;
+        @include media($large){
+          margin-right: 35px;
+          @include flex (flex,center,center);
+        }
+      &__item {
+        span {
+          @extend %text-indent;
+        }
+        &--user a::after{
+          content: "\f007";
+          color: $primary-color;
+          font-family: fontAwesome;
+        }
+      }  
       a {
-        margin: 0 30px;
+        margin: 0 15px;
       }
     }
     &__hamburger {
       width: 30px;
       height: 30px;
+      display: none;
+      @include media($large){
+        display: block;
+      }
       @include position(absolute,$top:3%,$right:5%);
       z-index: 10;
       &__bar {
@@ -82,7 +122,6 @@
 				content: '';
 				width: 100%;
         height: 2px;
-        display: none;
 				@include position(absolute,$top:50%);
 				@include transition(ease,.4s);
 				background-color: $primary-color;
@@ -108,6 +147,9 @@
 .header__mid {
   background-color: $primary-color;
   .wrapper {
+    @include media($large){
+      width: 97%;
+    }
     padding: 15px 0;
     @include flex(flex,space-between,center);
   }
@@ -142,7 +184,9 @@
 .header__btm {
   .wrapper {
     @include flex (flex,space-between,center);
-
+    @include media($large){
+      width: 92%;
+    }
   }
   &__social {
     span {
@@ -152,6 +196,9 @@
       color: #236573;
       text-decoration: underline;
       font-weight: bold;    
+      @include media($large){
+        display: none;
+      }
     }
     &__item__facebook a,
     &__item__linkdin a,
@@ -159,14 +206,17 @@
     &__item__mail a{
       position: relative;
       display: none;
+      @include media($large){
+        display: block;
+      }
       &::after {
       @extend %social-icon;
       }
-      &__item__facebook a::after { content: '\f09a'; }
-      &__item__linkdin a::after{ content: '\f0e1'; }
-      &__item__twitter a::after{ content: '\f099' ;}
-      &__item__mail a::after{ content: '\f0e0' ;}
     }
+    &__item__facebook a::after { content: '\f09a'; }
+    &__item__linkdin a::after{ content: '\f0e1'; }
+    &__item__twitter a::after{ content: '\f099' ;}
+    &__item__mail a::after{ content: '\f0e0' ;}
   }
   &__toggle{
     margin: 20px 0 12px;
