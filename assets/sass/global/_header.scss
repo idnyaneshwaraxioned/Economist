@@ -4,83 +4,237 @@
 /*=================================
   Header styling starts here
 =================================*/
-.header {
-	background-color: $bg-primary;
-	.wrapper {
-		padding: 8px 0;
-		@include media($large) {
-			padding: 0;
-		}
-	}
-	&__nav{
-		width: 100%;
-		&__hamburger{
-			width: 40px;
-			height: 40px;
-			display: none;
-			@include position(absolute,$top:7%,$right:5%);
-			z-index: 10;
-			@include media($large){
-				display: block;
-				&:hover ~ .header__nav__menu {
-					display: flex;
-				}
-			}
-			&__bar {
-				@extend %text-indent;
-			}
-			&::before,
-			&::after {
-				content: '';
-				width: 100%;
-				height: 3px;
-				@include position(absolute,$top:50%);
-				@include transition(ease,.4s);
-				background-color: $secondary-color;
-			}
-			&::before {
-				@include translate(0,10px);
-			}
-			&::after {
-				@include translate(0,-10px);
-				box-shadow: 0 10px 0 $secondary-color;
-			}
-			&:hover::after {
-				@include rotate(45);
-				box-shadow: none;
-			}
-			
-			&:hover::before {
-				@include rotate(-45);
-			}              
-		}
-		&__menu {
-			@include flex(flex,space-around,center);
-			@include media($large){
-				width: 100%;
-				padding: 40px 0;
+.header__top {
+  background-color: $secondary-color;
+
+  .wrapper{
+    @include flex (flex,flex-start,center);  
+    text-align: center;
+    @include media($large){
+      justify-content: space-between;
+    }
+  }
+  &__logo{
+    a {
+      padding: 14px;
+      background-color: $bg-red;
+      color: $primary-color;
+      font-size: nth($font-medium,1);
+      letter-spacing: 1px;
+      line-height: 17px;
+      span {
+        display: block;
+      }
+    }
+  }
+  &__nav {
+    @include flex (flex,space-between,center);
+    a {
+      color: $light_black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__menu {
+      @include flex (flex,center,center);
+      @include media($large){
+        width: 100%;
+        padding: 40px 0;
+        // display: none;
 				flex-direction: column;
-				display: none;
 				@include position(absolute,0,0);
-				z-index: 5;
-				background-color: $bg-primary;
+        z-index: 5;
+        @include scale (0);
+        @include origin(top);
+        @include transition(ease,.4s);
+				background-color: $secondary-color;
 				&__item {
 					width: 100%;
 					padding: 20px 0;
 					text-align: center;
-				}
-			}
-			a{
-				color: #000;
-				font-size: nth($font-medium,3);
-				letter-spacing: 1px;
+        }
+        &.active{
+          @include scale (1);
+        }
+      }
+     &__item {
+       position: relative;
+       &:hover &__dropdown{
+         display: block;
+       }
+       &:nth-child(1)::after,
+       &:nth-child(3)::after {
+         content: '\f078';
+         @include position (absolute,$top:50%,$right:15%){
+           transform: translateY(-50%);
+         }
+         @include media($large){
+          @include position (absolute,$top:50%,$right: 44%); 
+         }
+         color: $light_black;
+         font-size: nth($font-small,1);
+         font-family: fontAwesome;
+       }
+       a {
+         margin: 0 30px;
+       }
+      &__dropdown{
+        display: none;
+        @include position(absolute);
+        @include media($large){
+          @include position(relative);
+        }
+        z-index: 5;
+        background-color: $bg-red;
+        &__item {
+          padding: 3px 0;
+          display: block;
+          a {color: #fff;}
+        }
+        @include transition (ease,.4s);
+      }
+     }
+    }
+    &__submenu {
+        display: none;
+        @include media($large){
+          margin-right: 35px;
+          @include flex (flex,center,center);
+        }
+      &__item {
+        span {
+          @extend %text-indent;
+        }
+        &--user a::after{
+          content: "\f007";
+          color: $primary-color;
+          font-family: fontAwesome;
+        }
+      }  
+      a {
+        margin: 0 15px;
+      }
+    }
+    &__hamburger {
+      width: 30px;
+      height: 30px;
+      display: none;
+      @include media($large){
+        display: block;
+      }
+      @include position(absolute,$top:3%,$right:5%);
+      z-index: 10;
+      &__bar {
+        @extend %text-indent;
+      }
+      &::before,
+			&::after {
+				content: '';
+				width: 100%;
+        height: 2px;
+				@include position(absolute,$top:50%);
 				@include transition(ease,.4s);
-				&:hover {
-					text-decoration: underline;
-				}
+				background-color: $primary-color;
+      }
+      &::before {
+				@include translate(0,10px);
 			}
-		}
-	}
+			&::after {
+				@include translate(0,-10px);
+				box-shadow: 0 10px 0 $primary-color;
+			}
+			&.active::after {
+				@include rotate(45);
+				box-shadow: none;
+			}
+			&.active::before {
+				@include rotate(-45);
+			} 
+    }
+  }
+}
+
+.header__mid {
+  background-color: $primary-color;
+  .wrapper {
+    @include media($large){
+      width: 97%;
+    }
+    padding: 15px 0;
+    @include flex(flex,space-between,center);
+  }
+  &__breadcrumbs{
+    &__item{
+      &::after {
+        content: '\f054';
+        margin: 0 10px;
+        font-size: nth($font-small,3);
+        font-family: fontAwesome;
+        font-weight: normal;
+      }
+      a {
+        color: $secondary-color;
+        font-size: nth($font-small,3);
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__sponsor {
+    @include flex(flex,space-between,center);
+    span {
+      margin: 0 15px;
+      font-size: nth($font-small,3);
+      font-weight: bold;
+    }
+    
+  }
+}
+
+.header__btm {
+  .wrapper {
+    @include flex (flex,space-between,center);
+    @include media($large){
+      width: 92%;
+    }
+  }
+  &__social {
+    span {
+      @extend %text-indent;
+    }
+    &__item__home a {
+      color: $dark-green;
+      text-decoration: underline;
+      font-weight: bold;    
+      @include media($large){
+        display: none;
+      }
+    }
+    &__item__facebook a,
+    &__item__linkdin a,
+    &__item__twitter a,
+    &__item__mail a{
+      position: relative;
+      display: none;
+      @include media($large){
+        display: block;
+      }
+      &::after {
+      @extend %social-icon;
+      }
+    }
+    &__item__facebook a::after { content: '\f09a'; }
+    &__item__linkdin a::after{ content: '\f0e1'; }
+    &__item__twitter a::after{ content: '\f099' ;}
+    &__item__mail a::after{ content: '\f0e0' ;}
+  }
+  &__toggle{
+    margin: 20px 0 12px;
+    background-color: $secondary-color;
+    figure {
+      padding: 12px;
+    }
+  }
 }
 /*=================================
   Header styling ends here

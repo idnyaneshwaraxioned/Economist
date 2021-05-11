@@ -1,0 +1,149 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/extend';
+
+main .wrapper {
+	@include flex (flex,space-between,unset);  
+	@include media($large){
+		width: 100%;
+		flex-direction: column;
+	}  
+}
+.article {
+	width: 75%;
+	@include media($large){
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	background-color: $primary-color;
+	&__modal {
+		@include position(relative);
+		&__btnimg {
+			width: 13%;
+			@include position(absolute,$top:50%,$left:50%){
+				transform: translate(-50%,-50%);
+			}
+			cursor: pointer;
+		}
+	}
+	&__content {
+		padding: 15px;
+			h2 {
+				margin: 30px 0;
+				color: #236573;
+				font-size: nth($font-medium,3);
+				font-weight: bold;
+			}
+			p {
+				font-size: nth($font-medium,2);
+				line-height: 25px;
+			}
+			&__social {
+				padding: 5% 0;
+				@include flex(flex,flex-end,center);
+				@include media($large){
+					display: none;
+				}
+			  span {
+					@extend %text-indent;
+				}
+					&__item__facebook a,
+					&__item__linkdin a,
+					&__item__twitter a,
+					&__item__mail a{
+					position: relative;
+					@include transition(ease,.4s);
+					&:hover::after{
+						background-color: $secondary-color;
+					}
+					&::after {
+						content: 'd';
+						@extend %social-icon;
+					}
+				}
+				&__item__facebook a::after { content: '\f09a'; }
+				&__item__linkdin a::after{ content: '\f0e1'; }
+				&__item__twitter a::after{ content: '\f099' ;}
+				&__item__mail a::after{ content: '\f0e0' ;}
+			}
+	}
+}
+.aside {
+	width: 23%;
+	@include media($large){
+		width: 95%;
+		margin: 0 auto;
+	}
+	&__blog {
+    margin-bottom: 25px;
+		background-color: $primary-color;
+		&__content {
+			padding: 10px 15px;
+			&__writter{
+				span {
+					font-size: nth($font-small,3);
+				}
+				&__logo {
+					margin: 10px 0;
+    			width: 25%;
+				}
+			}
+			&__heading {
+				line-height: 22px;
+				a {
+					color: $light-green;
+					text-decoration: underline;
+				}
+			}
+			p {
+				margin: 14px 0 5px;
+				font-size: nth($font-small,2);
+				line-height: 18px;
+			}
+		}
+		&__modal {
+			@include position(relative);
+			&__btnimg{
+				width: 20%;
+				@include position(absolute,$top:50%,$left:50%){
+					transform: translate(-50%,-50%);
+				}
+				cursor: pointer;
+			}
+		}
+	}
+	&__blog:nth-child(3){ 
+		margin-bottom: 0;
+		@include media($large){
+		margin-bottom: 25px;
+		} 
+	}
+}
+
+/* video modal */
+
+.video__container {
+	width: 100%;
+	height: 100%;
+	display: none;
+	@include position(fixed,$top:0,$left:0);
+	background-color: rgba(0,0,0,.2);
+	&__modal {
+		width: 950px;
+		@include position(absolute,$top:50%,$left:50%){
+			transform: translate(-50%,-50%);
+		}
+		video {
+			width: 100%;
+		}
+		&__close{
+			@include position (absolute,$top:-20px,$right:-20px);
+			a {
+				padding: 8px 12px;
+				border-radius: 50%;
+				background-color: $primary-color;
+				color: $secondary-color;
+			}
+		}
+	}
+}

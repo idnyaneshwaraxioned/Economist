@@ -30,6 +30,13 @@
  -webkit-transform: $transforms;
 	   transform: $transforms;
 }
+
+// 
+@mixin origin($derection) {
+-webkit-transform-origin: $derection;
+-ms-transform-origin: $derection;
+	transform-origin: $derection;
+}
 //translate
 @mixin translate ($x, $y) {
 	@include transform(translate($x, $y));
@@ -38,6 +45,11 @@
 // rotate
 @mixin rotate ($deg) {
 	@include transform(rotate(#{$deg}deg));
+}
+
+//scale 
+@mixin scale ($val) {
+	@include transform(scale($val));
 }
 
 //border

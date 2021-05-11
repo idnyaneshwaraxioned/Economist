@@ -1,30 +1,15 @@
 <!doctype html>
 
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
-<html lang="en"> 
+<html lang="en">
 
 <head>
- 
+
   <meta charset="utf-8">
 
-  <title>Client</title>
-  
-  <!-- 120 word description for SEO purposes goes here. Note: Usage of lang tag. -->
-  <!-- <meta name="description" lang="en" content=""> -->
-  
-  <!-- Keywords to help with SEO go here. Note: Usage of lang tag.  -->
-  <!-- <meta name="keywords" lang="en" content=""> -->
-  
-  <!-- View-port Basics: http://mzl.la/VYREaP -->
-  <!-- This meta tag is used for mobile device to display the page without any zooming,
-       so how much the device is able to fit on the screen is what's shown initially. 
-       Remove comments from this tag, when you want to apply media queries to the website. -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
-  
-  <!-- To adhear no-cache for Chrome -->
-<!--   <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-store, no-cache" />
-  <meta http-equiv="Expires" content="0" /> -->
+  <title>The Economist</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Place favicon.ico in the root directory: mathiasbynens.be/notes/touch-icons -->
   <link rel="shortcut icon" href="favicon.ico" />
@@ -33,12 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
-  <link rel="stylesheet" media="screen" href="assets/css/style.css" >
-
-  <!-- html5shiv aka html5 shim. Supporting HTML5 and CSS for IE browsers less than IE9. -->	
-  <!--[if lt IE 9]>  
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
-  <![endif]-->
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
 
 </head>
 
@@ -47,25 +27,207 @@
   <div class="container">
     <!--header section start-->
     <header>
-      
+      <div class="header__top">
+        <div class="wrapper">
+          <h1 class="header__top__logo">
+            <a href="index.html" title="The Economist">The <span>Economist</span></a>
+          </h1>
+          <nav class="header__top__nav">
+            <ul class="header__top__nav__menu">
+              <li class="header__top__nav__menu__item"><a href="#fixme" title="Topics">Topics</a>
+                <ul class="header__top__nav__menu__item__dropdown">
+                  <li class="header__top__nav__menu__item__dropdown__item"><a href="#fixme" title="Money">Money</a></li>
+                  <li class="header__top__nav__menu__item__dropdown__item"><a href="#fixme" title="Economi">Economi</a>
+                  </li>
+                  <li class="header__top__nav__menu__item__dropdown__item"><a href="#fixme" title="Money">Money</a></li>
+                </ul>
+              </li>
+              <li class="header__top__nav__menu__item"><a href="#fixme" title="Print edition">Print edition</a></li>
+              <li class="header__top__nav__menu__item"><a href="#fixme" title="More">More</a>
+                <ul class="header__top__nav__menu__item__dropdown">
+                  <li class="header__top__nav__menu__item__dropdown__item"><a href="#fixme" title="About">About</a></li>
+                  <li class="header__top__nav__menu__item__dropdown__item"><a href="#fixme" title="Blogs">Blogs</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="header__top__nav__submenu">
+              <li class="header__top__nav__submenu__item header__top__nav__submenu__item--subscribe"><a href="#fixme"
+                  title="Subscribe">Subscribe</a></li>
+              <li class="header__top__nav__submenu__item header__top__nav__submenu__item--user"><a href="#fixme"
+                  title="User"><span>User</span></a></li>
+            </ul>
+            <div class="header__top__nav__hamburger desktop-none">
+              <span class="header__top__nav__hamburger__bar">bar</span>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="header__mid">
+        <div class="wrapper">
+          <ul class="header__mid__breadcrumbs">
+            <li class="header__mid__breadcrumbs__item"><a href="#fixme" title="Advertisement Feature">ADVERTISEMENT
+                FEATURE</a></li>
+          </ul>
+          <div class="header__mid__sponsor">
+            <span>SPONSORED BY</span>
+            <figure>
+              <img src="assets/images/econ_logo.png" alt="E-On">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="header__btm">
+        <div class="wrapper">
+          <ul class="header__btm__social">
+            <li class="header__btm__social_item header__btm__social__item__home"><a href="index.html"
+                title="Home">Home</a></li>
+            <li class="header__btm__social_item header__btm__social__item__facebook"><a href="#fixme"
+                title="Facebook"><span>facebook</span></a></li>
+            <li class="header__btm__social_item header__btm__social__item__linkdin"><a href="#fixme"
+                title="Linkdin"><span>linkdin</span></a></li>
+            <li class="header__btm__social_item header__btm__social__item__twitter"><a href="#fixme"
+                title="Twitter"><span>twitter</span></a></li>
+            <li class="header__btm__social_item header__btm__social__item__mail"><a href="#fixme"
+                title="Mail"><span>mail</span></a></li>
+          </ul>
+          <div class="header__btm__toggle">
+            <figure>
+              <img src="assets/images/menu.png" alt="Toggle">
+            </figure>
+          </div>
+        </div>
+      </div>
     </header>
     <!--header section start-->
     <!--main section start-->
     <main>
-
+      <div class="wrapper">
+        <article class="article">
+          <div class="article__modal">
+            <figure class="article__modal__image">
+              <img src="assets/images/image.jpg" alt="Modal">
+            </figure>
+            <figure class="article__modal__btnimg">
+              <img src="assets/images/Play-button-new.png" alt="Play Btn">
+            </figure>
+          </div>
+          <div class="article__content">
+            <h2>Taking the lead on clean air</h2>
+            <p>The invisible threat of fine-paricle polution can be as to put aide. In this video, we explore how E.ON
+              bringing the issue into sharp focus with a larger-than-life sculpture positioned in the heart of
+              London.Profesor lan Stewart from the University of Phymouth and Scott Somerville from E.ON UK discuss why
+              this issue matters, and how London and its buineses can set an example for the world by taking steps to
+              reduce air pollution.
+            </p>
+            <ul class="article__content__social">
+              <li class="article__content__social__item article__content__social__item__facebook"><a href="#fixme"
+                  title="Facebook"><span>facebook</span></a></li>
+              <li class="article__content__social__item article__content__social__item__linkdin"><a href="#fixme"
+                  title="Linkdin"><span>linkdin</span></a></li>
+              <li class="article__content__social__item article__content__social__item__twitter"><a href="#fixme"humburger
+                  title="Twitter"><span>twitter</span></a></li>
+              <li class="article__content__social__item article__content__social__item__mail"><a href="#fixme"
+                  title="Mail"><span>mail</span></a></li>
+            </ul>
+          </div>
+        </article>
+        <aside class="aside">
+          <div class="aside__blog">
+            <figure class="blog_heroimg">
+              <img src="assets/images/Rectangle.png" alt="Rectangle">
+            </figure>
+            <div class="aside__blog__content">
+              <div class="aside__blog__content__writter">
+                <span>Written By</span>
+                <figure class="aside__blog__content__writter__logo">
+                  <img src="assets/images/econ_logo.png" alt="E.On">
+                </figure>
+              </div>
+              <h3 class="aside__blog__content__heading"><a href="#fixme" title="Inforgraphic">Inforgraphic:imagining the
+                  future of
+                  mobility in the
+                  UK</a></h3>
+              <p>How we travel around the UK is shifting radically. Learn why this is essential in the fight to reduce
+                air
+                pollution.</p>
+            </div>
+          </div>
+          <div class="aside__blog">
+            <figure class="blog_heroimg">
+              <img src="assets/images/2.jpg" alt="2image">
+            </figure>
+            <div class="aside__blog__content">
+              <div class="aside__blog__content__writter">
+                <span>Written By</span>
+                <figure class="aside__blog__content__writter__logo">
+                  <img src="assets/images/EIU-logo.png" alt="E.On">
+                </figure>
+              </div>
+              <h3 class="aside__blog__content__heading"><a href="#fixme" title="Ready for change">Ready for change:
+                  pathways to a
+                  low emissions future</a></h3>
+              <p>New research from The Economist Intelligence Unit examines British businesses strategies for lowering
+                emissions and their progress towards climate-related goals.</p>
+            </div>
+          </div>
+          <div class="aside__blog">
+            <div class="aside__blog__modal">
+              <figure class="aside__blog__modal__image">
+                <img src="assets/images/Home_img-e1533629478865-1.jpg" alt="Modal">
+              </figure>
+              <figure class="aside__blog__modal__btnimg">
+                <img src="assets/images/Play-button-new.png" alt="Play Btn">
+              </figure>
+            </div>
+            <div class="aside__blog__content">
+              <div class="aside__blog__content__writter">
+                <span>Written By</span>
+                <figure class="aside__blog__content__writter__logo">
+                  <img src="assets/images/econ_logo.png" alt="E.On">
+                </figure>
+              </div>
+              <h3 class="aside__blog__content__heading"><a href="#fixme" title="The future of energy">The future of
+                  energy</a></h3>
+              <p>The energy revolution is one of the key megatrends affecting UK business. Forward-thinking
+                organisations
+                understand that how they engage with this transformation will impact on their business success.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="video__container">
+        <div class="video__container__modal">
+          <video controls autoplay>
+            <source src="dummy.mp4" type="video/mp4">
+          </video>
+          <div class="video__container__modal__close">
+            <a href="#fixme" title="close">X</a>
+          </div>
+        </div>
+      </div>
     </main>
     <!--main section end-->
 
     <!--footer section start-->
-    <footer>      
-
+    <footer class="footer">
+      <div class="wrapper">
+        <ul class="footer__menu">
+          <li class="footer__menu__item"><a href="#fixme" title="Tearm of Use">Tearm of Use</a></li>
+          <li class="footer__menu__item"><a href="#fixme" title="Privacy">Privacy</a></li>
+          <li class="footer__menu__item"><a href="#fixme" title="Cookies">Cookies</a></li>
+          <li class="footer__menu__item"><a href="#fixme" title="Accessibility">Accessibility</a></li>
+          <li class="footer__menu__item"><a href="#fixme" title="Manage Cookie Preferances">Manage Cookie
+              Preferances</a></li>
+        </ul>
+        <p>Copyright &copy; The Economist Newspaper Limited 2021.All rights reserved.</p>
+      </div>
     </footer>
     <!--footer section end-->
 
   </div>
   <!--container end-->
 
-<!-- <script src="js/vendors/jquery-1.8.3.min.js"></script>
-<script src="js/script.js"></script> -->
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
