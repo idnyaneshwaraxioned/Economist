@@ -37,16 +37,22 @@
       @include media($large){
         width: 100%;
         padding: 40px 0;
-        display: none;
+        // display: none;
 				flex-direction: column;
 				@include position(absolute,0,0);
-				z-index: 5;
+        z-index: 5;
+        @include scale (0);
+        @include origin(top);
+        @include transition(ease,.4s);
 				background-color: $secondary-color;
 				&__item {
 					width: 100%;
 					padding: 20px 0;
 					text-align: center;
-				}
+        }
+        &.active{
+          @include scale (1);
+        }
       }
      &__item {
        position: relative;
@@ -133,11 +139,11 @@
 				@include translate(0,-10px);
 				box-shadow: 0 10px 0 $primary-color;
 			}
-			&:hover::after {
+			&.active::after {
 				@include rotate(45);
 				box-shadow: none;
 			}
-			&:hover::before {
+			&.active::before {
 				@include rotate(-45);
 			} 
     }

@@ -201,18 +201,35 @@ header section start here
   .header__top__nav__menu {
     width: 100%;
     padding: 40px 0;
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 5;
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: ease 0.4s;
+    -o-transition: ease 0.4s;
+    transition: ease 0.4s;
     background-color: #000;
   }
   .header__top__nav__menu__item {
     width: 100%;
     padding: 20px 0;
     text-align: center;
+  }
+  .header__top__nav__menu.active {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 .header__top__nav__menu__item {
@@ -322,7 +339,7 @@ header section start here
   transform: translate(0, -10px);
   box-shadow: 0 10px 0 #fff;
 }
-.header__top__nav__hamburger:hover::after {
+.header__top__nav__hamburger.active::after {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -330,7 +347,7 @@ header section start here
   transform: rotate(45deg);
   box-shadow: none;
 }
-.header__top__nav__hamburger:hover::before {
+.header__top__nav__hamburger.active::before {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
