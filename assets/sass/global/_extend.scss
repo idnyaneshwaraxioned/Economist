@@ -19,21 +19,19 @@
 	color: $secondary-color;
 }
 
-//section heading
-%section-heading {
-	padding: 15px 0;
-	@include position(relative);
-	font-size: 32px;
-	letter-spacing: 1px;	
-}
-%section-heading-after {
-	content: '';
-	width: 12%;
-	height: 5px;
-	@include position(absolute,$bottom:0,$left:50%){
-		transform: translateX(-50%);
-	}
-	background-color: darken($bg-primary, 25%);
+// social 
+%social-icon {
+	width: 25px;
+	height: 25px;
+	padding: 10px;
+	border-radius: 50%;
+	margin: 0 5px;
+	display: inline-block;
+	background-color: #BBBBBB;
+	color: #fff;
+	font-family: fontAwesome;
+	font-size: 25px;
+	text-align: center;
 }
 
 //button

@@ -1,0 +1,64 @@
+@import '../global/variables';
+@import '../global/mixin';
+@import '../global/extend';
+
+main .wrapper {
+  @include flex (flex,space-between,flex-start);    
+}
+.article {
+	width: 75%;
+	background-color: $primary-color;
+	&__modal {
+		@include position(relative);
+		&__btnimg {
+			width: 13%;
+			@include position(absolute,$top:50%,$left:50%){
+				transform: translate(-50%,-50%);
+			}
+			cursor: pointer;
+		}
+	}
+	&__content {
+		padding: 15px;
+		h2 {
+			margin: 30px 0;
+			color: #236573;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		p {
+			font-size: 20px;
+			line-height: 25px;
+		}
+		&__social {
+			margin: 5% 0;
+			@include flex(flex,flex-end,center);
+			span {
+				@extend %text-indent;
+			}
+			&__item__facebook a,
+			&__item__linkdin a,
+			&__item__twitter a,
+			&__item__mail a{
+				position: relative;
+				&::after {
+					@extend %social-icon;
+				}
+			}
+			&__item__facebook a::after { content: '\f09a'; }
+			&__item__linkdin a::after{ content: '\f0e1'; }
+			&__item__twitter a::after{ content: '\f099' ;}
+			&__item__mail a::after{ content: '\f0e0' ;}
+		}
+	}
+
+}
+
+.aside {
+	width: 23%;
+	&__blog {
+		&__content {
+			padding: 10px 15px;
+		}
+	}
+}

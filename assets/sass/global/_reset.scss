@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import 'variables';
+
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -100,6 +102,10 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1837px;
-  width: 97%;
+  width: 82%;
   margin: 0 auto;
+}
+/* for container background color */
+.container {
+  background-color: #F6F6F7;
 }
