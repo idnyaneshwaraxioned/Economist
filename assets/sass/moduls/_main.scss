@@ -3,10 +3,18 @@
 @import '../global/extend';
 
 main .wrapper {
-  @include flex (flex,space-between,unset);    
+	@include flex (flex,space-between,unset);  
+	@include media($large){
+		width: 100%;
+		flex-direction: column;
+	}  
 }
 .article {
 	width: 75%;
+	@include media($large){
+		width: 100%;
+		margin-bottom: 20px;
+	}
 	background-color: $primary-color;
 	&__modal {
 		@include position(relative);
@@ -33,6 +41,9 @@ main .wrapper {
 			&__social {
 				padding: 5% 0;
 				@include flex(flex,flex-end,center);
+				@include media($large){
+					display: none;
+				}
 			  span {
 					@extend %text-indent;
 				}
@@ -55,6 +66,10 @@ main .wrapper {
 }
 .aside {
 	width: 23%;
+	@include media($large){
+		width: 95%;
+		margin: 0 auto;
+	}
 	&__blog {
     margin-bottom: 25px;
 		background-color: $primary-color;
@@ -93,5 +108,10 @@ main .wrapper {
 			}
 		}
 	}
-	&__blog:nth-child(3){ margin-bottom: 0; }
+	&__blog:nth-child(3){ 
+		margin-bottom: 0;
+		@include media($large){
+		margin-bottom: 25px;
+		} 
+	}
 }

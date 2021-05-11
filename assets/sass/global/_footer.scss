@@ -3,74 +3,26 @@
 @import '../global/extend';
 
 .footer {
-	padding: 2% 0;
-	text-align: center;
-	background-color: $bg-primary;
-	color: lighten($secondary-color,20%);
-	h6{
-	font-size: nth($font-medium,4);
-	letter-spacing: 1px;
-	}
-	&__btn a{
-		padding: 9px 1.5%;
-		margin: 20px 0;
-		font-size: nth($font-medium,1);
-    font-weight: bold;
-		letter-spacing: 1px;
-		background-color: $secondary-color;
-		color: $primary-color;
-		@include transition (ease,.4s);
-		&:hover{
-			@include shadow(0,0,20px);
-			background-color: $bg-green;
-		}
-		&::before {
-			content: '\f062';
-			margin-right: 20px;
-			font-family: fontAwesome;
+	border-top: 6px solid $bg-red;
+	background-color: $secondary-color;
+	color: $primary-color;
+	.wrapper {
+		padding: 5px 0;
+		@include flex (flex,space-between,center);
+		flex-wrap: wrap;
+		@include media($large){
+			width: 100%;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
 		}
 	}
-	&__social {
-		margin: 22px 0;
-		@include flex (flex,center,center);
-		&__items {
-			a{
-				color: $secondary-color;
-				&:hover::after {
-					color: $bg-green;
-				}
-				&::after {
-					content: '';
-					margin: 0 5px;
-					font-family: fontAwesome;
-					font-size: nth($font-large,2);
-					@include transition (ease,.4s);
-				}
+	&__menu {
+		&__item{
+			a {
+				margin: 10px;
+				color: #fff;
 			}
-
-			&:nth-child(1) a::after { content: '\f082';}
-			&:nth-child(2) a::after { content: '\f16d';}
-			&:nth-child(3) a::after { content: '\f2ad';}
-			&:nth-child(4) a::after { content: '\f231';}
-			&:nth-child(5) a::after { content: '\f099';}
-			&:nth-child(6) a::after { content: '\f0e1';}
-
-			// &__facebook::after { content: '\f082';}
-			// &__instagram::after { content: '\f09a';}
-			// &__snapchat::after { content: '';}
-			// &__pinterest::after { content: '';}
-			// &__twitter::after { content: '';}
-			// &__linkdin::after { content: '';}
-		}
-		span {
-			@extend %text-indent;
-		}
-	}
-	p {
-		font-size: nth($font-medium,2);
-		a {
-			color: $secondary-color;
-			border-bottom: 1px solid $secondary-color;
 		}
 	}
 }
