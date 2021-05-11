@@ -6,6 +6,7 @@
 	border-top: 6px solid $bg-red;
 	background-color: $secondary-color;
 	color: $primary-color;
+
 	.wrapper {
 		padding: 5px 0;
 		@include flex (flex,space-between,center);
@@ -17,6 +18,7 @@
 			text-align: center;
 		}
 	}
+	
 	&__menu {
 		&__item{
 			a {

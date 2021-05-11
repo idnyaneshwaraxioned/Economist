@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixin';
+
 //text-indent
 %text-indent {
 	text-indent: -99999px;
@@ -29,5 +30,5 @@ font-weight: bold;
 @include transition(ease,.4s);
 @include media(995px){
 	color: $primary-color;
-}
+	}
 }
