@@ -10,11 +10,11 @@
   .wrapper{
     @include flex (flex,flex-start,center);  
     text-align: center;
-    @include media($large){
-      justify-content: space-between;
-    }
+    @include media($large){ justify-content: space-between; }
   }
+
   &__logo{
+  
     a {
       padding: 14px;
       background-color: $bg-red;
@@ -22,25 +22,24 @@
       font-size: nth($font-medium,1);
       letter-spacing: 1px;
       line-height: 17px;
-      span {
-        display: block;
-      }
+  
+      span { display: block; }
     }
   }
+
   &__nav {
     @include flex (flex,space-between,center);
+  
     a {
       color: $light_black;
-      &:hover {
-        text-decoration: underline;
-      }
+      &:hover { text-decoration: underline; }
     }
+
     &__menu {
       @include flex (flex,center,center);
       @include media($large){
         width: 100%;
         padding: 40px 0;
-        // display: none;
 				flex-direction: column;
 				@include position(absolute,0,0);
         z-index: 5;
@@ -53,68 +52,64 @@
 					padding: 20px 0;
 					text-align: center;
         }
-        &.active{
-          @include scale (1);
-        }
+
+        &.active{ @include scale (1); }
       }
+
      &__item {
        position: relative;
-       &:hover &__dropdown{
-         display: block;
-       }
+       &:hover &__dropdown{ display: block; }
+
        &:nth-child(1)::after,
        &:nth-child(3)::after {
          content: '\f078';
-         @include position (absolute,$top:50%,$right:15%){
-           transform: translateY(-50%);
-         }
-         @include media($large){
-          @include position (absolute,$top:50%,$right: 44%); 
-         }
+         @include position (absolute,$top:50%,$right:15%){ transform: translateY(-50%); }
+         @include media($large){ @include position (absolute,$top:50%,$right: 44%); }
          color: $light_black;
          font-size: nth($font-small,1);
          font-family: fontAwesome;
        }
-       a {
-         margin: 0 30px;
-       }
+
+       a { margin: 0 30px; }
+
       &__dropdown{
         display: none;
         @include position(absolute);
-        @include media($large){
-          @include position(relative);
-        }
+        @include media($large){ @include position(relative); }
         z-index: 5;
         background-color: $bg-red;
+        
         &__item {
           padding: 3px 0;
           display: block;
-          a {color: #fff;}
+          a {color: $primary-color;}
         }
         @include transition (ease,.4s);
       }
      }
     }
+
     &__submenu {
         display: none;
         @include media($large){
           margin-right: 35px;
           @include flex (flex,center,center);
         }
-      &__item {
-        span {
-          @extend %text-indent;
-        }
+    
+        &__item {
+        span { @extend %text-indent; }
+
         &--user a::after{
           content: "\f007";
           color: $primary-color;
           font-family: fontAwesome;
         }
-      }  
-      a {
-        margin: 0 15px;
-      }
+      } 
+
+      a { margin: 0 15px; }
+
     }
+
     &__hamburger {
       width: 30px;
       height: 30px;
@@ -124,9 +119,8 @@
       }
       @include position(absolute,$top:3%,$right:5%);
       z-index: 10;
-      &__bar {
-        @extend %text-indent;
-      }
+      &__bar { @extend %text-indent; }
+
       &::before,
 			&::after {
 				content: '';
@@ -136,26 +130,24 @@
 				@include transition(ease,.4s);
 				background-color: $primary-color;
       }
-      &::before {
-				@include translate(0,10px);
-			}
-			&::after {
+      &::before { @include translate(0,10px); }
+      
+      &::after { 
 				@include translate(0,-10px);
 				box-shadow: 0 10px 0 $primary-color;
-			}
+      }
 			&.active::after {
 				@include rotate(45);
 				box-shadow: none;
-			}
-			&.active::before {
-				@include rotate(-45);
-			} 
+      }
+			&.active::before { @include rotate(-45); } 
     }
   }
 }
 
 .header__mid {
   background-color: $primary-color;
+
   .wrapper {
     @include media($large){
       width: 97%;
@@ -172,6 +164,7 @@
         font-family: fontAwesome;
         font-weight: normal;
       }
+
       a {
         color: $secondary-color;
         font-size: nth($font-small,3);
@@ -180,28 +173,30 @@
       }
     }
   }
+
   &__sponsor {
     @include flex(flex,space-between,center);
+
     span {
       margin: 0 15px;
       font-size: nth($font-small,3);
       font-weight: bold;
-    }
-    
+    }    
   }
 }
 
 .header__btm {
+  
   .wrapper {
     @include flex (flex,space-between,center);
     @include media($large){
       width: 92%;
     }
   }
+  
   &__social {
-    span {
-      @extend %text-indent;
-    }
+    span { @extend %text-indent; }
+    
     &__item__home a {
       color: $dark-green;
       text-decoration: underline;
@@ -210,6 +205,7 @@
         display: none;
       }
     }
+    
     &__item__facebook a,
     &__item__linkdin a,
     &__item__twitter a,
@@ -219,21 +215,20 @@
       @include media($large){
         display: block;
       }
-      &::after {
-      @extend %social-icon;
-      }
+
+      &::after { @extend %social-icon; }
     }
+
     &__item__facebook a::after { content: '\f09a'; }
     &__item__linkdin a::after{ content: '\f0e1'; }
     &__item__twitter a::after{ content: '\f099' ;}
     &__item__mail a::after{ content: '\f0e0' ;}
   }
+
   &__toggle{
     margin: 20px 0 12px;
     background-color: $secondary-color;
-    figure {
-      padding: 12px;
-    }
+    figure { padding: 12px; }
   }
 }
 /*=================================
