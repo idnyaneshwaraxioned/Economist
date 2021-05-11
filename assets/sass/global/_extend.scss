@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixin';
+//text-indent
+%text-indent {
+	text-indent: -99999px;
+	float: left;
+}
+
+//inputs
+%input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;	
+	@include border (1px,solid,$border-color);
+	margin: 3px 0;
+	color: $secondary-color;
+}
+
+//section heading
+%section-heading {
+	padding: 15px 0;
+	@include position(relative);
+	font-size: 32px;
+	letter-spacing: 1px;	
+}
+%section-heading-after {
+	content: '';
+	width: 12%;
+	height: 5px;
+	@include position(absolute,$bottom:0,$left:50%){
+		transform: translateX(-50%);
+	}
+	background-color: darken($bg-primary, 25%);
+}
+
+//button
+%btn-primary{
+	padding: 10px 22px;
+font-size: 18px;
+font-weight: bold;
+@include transition(ease,.4s);
+@include media(995px){
+	color: $primary-color;
+}
+}
+
+%para {
+	margin: 5px 0;
+	font-size: 18px;
+	line-height: 25px;
+	letter-spacing: 1px;
+}
