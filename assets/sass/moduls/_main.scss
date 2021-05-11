@@ -55,5 +55,10 @@ main .wrapper {
 }
 
 .aside {
-  width: 23%;
+	width: 23%;
+	&__blog {
+		&__content {
+			padding: 10px 15px;
+		}
+	}
 }

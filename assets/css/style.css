@@ -462,5 +462,8 @@ main .wrapper {
 .aside {
   width: 23%;
 }
+.aside__blog__content {
+  padding: 10px 15px;
+}
 
 /*# sourceMappingURL=style.css.map */
