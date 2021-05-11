@@ -162,11 +162,11 @@
       &::after {
       @extend %social-icon;
       }
+      &__item__facebook a::after { content: '\f09a'; }
+      &__item__linkdin a::after{ content: '\f0e1'; }
+      &__item__twitter a::after{ content: '\f099' ;}
+      &__item__mail a::after{ content: '\f0e0' ;}
     }
-    &__item__facebook a::after { content: '\f09a'; }
-    &__item__linkdin a::after{ content: '\f0e1'; }
-    &__item__twitter a::after{ content: '\f099' ;}
-    &__item__mail a::after{ content: '\f0e0' ;}
   }
   &__toggle{
     margin: 20px 0 12px;
