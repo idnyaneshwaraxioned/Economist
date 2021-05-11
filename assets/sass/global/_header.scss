@@ -5,7 +5,7 @@
   Header styling starts here
 =================================*/
 .header__top {
-  background-color: $bg-primary;
+  background-color: $secondary-color;
 
   .wrapper{
     @include flex (flex,flex-start,center);  
@@ -30,7 +30,7 @@
   &__nav {
     @include flex (flex,space-between,center);
     a {
-      color: $primary-color;
+      color: $light_black;
       &:hover {
         text-decoration: underline;
       }
@@ -71,7 +71,7 @@
          @include media($large){
           @include position (absolute,$top:50%,$right: 44%); 
          }
-         color: $primary-color;
+         color: $light_black;
          font-size: nth($font-small,1);
          font-family: fontAwesome;
        }
@@ -89,6 +89,7 @@
         &__item {
           padding: 3px 0;
           display: block;
+          a {color: #fff;}
         }
         @include transition (ease,.4s);
       }

@@ -4,7 +4,7 @@
 
 .footer {
 	border-top: 6px solid $bg-red;
-	background-color: $bg-primary;
+	background-color: $secondary-color;
 	color: $primary-color;
 	.wrapper {
 		padding: 5px 0;
@@ -21,7 +21,7 @@
 		&__item{
 			a {
 				margin: 10px;
-				color: #fff;
+				color: $light_black;
 				&:hover {
 					text-decoration: underline;
 				}

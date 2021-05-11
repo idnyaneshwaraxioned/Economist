@@ -148,7 +148,7 @@ header section start here
   Header styling starts here
 =================================*/
 .header__top {
-  background-color: #3a3a3a;
+  background-color: #000;
 }
 .header__top .wrapper {
   display: -webkit-box;
@@ -186,7 +186,7 @@ header section start here
   align-items: center;
 }
 .header__top__nav a {
-  color: #fff;
+  color: #adadade6;
 }
 .header__top__nav a:hover {
   text-decoration: underline;
@@ -247,7 +247,7 @@ header section start here
   top: 50%;
   right: 15%;
   transform: translateY(-50%);
-  color: #fff;
+  color: #adadade6;
   font-size: 12px;
   font-family: fontAwesome;
 }
@@ -278,6 +278,9 @@ header section start here
 .header__top__nav__menu__item__dropdown__item {
   padding: 3px 0;
   display: block;
+}
+.header__top__nav__menu__item__dropdown__item a {
+  color: #fff;
 }
 .header__top__nav__submenu {
   display: none;
@@ -689,7 +692,7 @@ footer section start here
 
 .footer {
   border-top: 6px solid #ff0000;
-  background-color: #3a3a3a;
+  background-color: #000;
   color: #fff;
 }
 .footer .wrapper {
@@ -713,7 +716,7 @@ footer section start here
 }
 .footer__menu__item a {
   margin: 10px;
-  color: #fff;
+  color: #adadade6;
 }
 .footer__menu__item a:hover {
   text-decoration: underline;
