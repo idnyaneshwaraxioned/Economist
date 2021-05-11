@@ -148,7 +148,7 @@ header section start here
   Header styling starts here
 =================================*/
 .header__top {
-  background-color: #000;
+  background-color: #3a3a3a;
 }
 .header__top .wrapper {
   display: -webkit-box;
@@ -689,7 +689,7 @@ footer section start here
 
 .footer {
   border-top: 6px solid #ff0000;
-  background-color: #000;
+  background-color: #3a3a3a;
   color: #fff;
 }
 .footer .wrapper {
