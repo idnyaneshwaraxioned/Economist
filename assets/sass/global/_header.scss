@@ -31,6 +31,9 @@
     @include flex (flex,space-between,center);
     a {
       color: $primary-color;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &__menu {
       @include flex (flex,center,center);

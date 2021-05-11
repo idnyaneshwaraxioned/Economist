@@ -52,6 +52,10 @@ main .wrapper {
 					&__item__twitter a,
 					&__item__mail a{
 					position: relative;
+					@include transition(ease,.4s);
+					&:hover::after{
+						background-color: $secondary-color;
+					}
 					&::after {
 						content: 'd';
 						@extend %social-icon;
