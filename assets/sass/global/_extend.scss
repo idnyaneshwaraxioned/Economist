@@ -6,19 +6,6 @@
 	float: left;
 }
 
-//inputs
-%input {
-	width: 100%;
-	padding: 10px;
-	border: none;
-	outline: none;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;	
-	@include border (1px,solid,$border-color);
-	margin: 3px 0;
-	color: $secondary-color;
-}
-
 // social 
 %social-icon {
 	width: 25px;
@@ -43,11 +30,4 @@ font-weight: bold;
 @include media(995px){
 	color: $primary-color;
 }
-}
-
-%para {
-	margin: 5px 0;
-	font-size: 18px;
-	line-height: 25px;
-	letter-spacing: 1px;
 }
