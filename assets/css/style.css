@@ -125,9 +125,23 @@ li {
 /*==================
 header section start here
 ====================*/
-.header__btm__social span, .header__top__nav__hamburger__bar {
+.article__content__social span, .header__btm__social span, .header__top__nav__hamburger__bar {
   text-indent: -99999px;
   float: left;
+}
+
+.article__content__social__item__facebook a::after, .article__content__social__item__linkdin a::after, .article__content__social__item__twitter a::after, .article__content__social__item__mail a::after, .header__btm__social__item__facebook a::after, .header__btm__social__item__linkdin a::after, .header__btm__social__item__twitter a::after, .header__btm__social__item__mail a::after {
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-block;
+  background-color: #BBBBBB;
+  color: #fff;
+  font-family: fontAwesome;
+  font-size: 25px;
+  text-align: center;
 }
 
 /*=================================
@@ -333,19 +347,6 @@ header section start here
   position: relative;
   display: none;
 }
-.header__btm__social__item__facebook a::after, .header__btm__social__item__linkdin a::after, .header__btm__social__item__twitter a::after, .header__btm__social__item__mail a::after {
-  width: 25px;
-  height: 25px;
-  padding: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-  display: inline-block;
-  background-color: #BBBBBB;
-  color: #fff;
-  font-family: fontAwesome;
-  font-size: 25px;
-  text-align: center;
-}
 .header__btm__social__item__facebook a::after {
   content: "";
 }
@@ -372,5 +373,94 @@ header section start here
 /*==================
 header section ends here
 ====================*/
+/*==================
+main section start here
+===================*/
+.article__content__social span, .header__top__nav__hamburger__bar, .header__btm__social span {
+  text-indent: -99999px;
+  float: left;
+}
+
+.article__content__social__item__facebook a::after, .article__content__social__item__linkdin a::after, .article__content__social__item__twitter a::after, .article__content__social__item__mail a::after, .header__btm__social__item__facebook a::after, .header__btm__social__item__linkdin a::after, .header__btm__social__item__twitter a::after, .header__btm__social__item__mail a::after {
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-block;
+  background-color: #BBBBBB;
+  color: #fff;
+  font-family: fontAwesome;
+  font-size: 25px;
+  text-align: center;
+}
+
+main .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.article {
+  width: 75%;
+  background-color: #fff;
+}
+.article__modal {
+  position: relative;
+}
+.article__modal__btnimg {
+  width: 13%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.article__content {
+  padding: 15px;
+}
+.article__content h2 {
+  margin: 30px 0;
+  color: #236573;
+  font-size: 30px;
+  font-weight: bold;
+}
+.article__content p {
+  font-size: 20px;
+  line-height: 25px;
+}
+.article__content__social {
+  margin: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+}
+.article__content__social__item__facebook a, .article__content__social__item__linkdin a, .article__content__social__item__twitter a, .article__content__social__item__mail a {
+  position: relative;
+}
+.article__content__social__item__facebook a::after {
+  content: "";
+}
+.article__content__social__item__linkdin a::after {
+  content: "";
+}
+.article__content__social__item__twitter a::after {
+  content: "";
+}
+.article__content__social__item__mail a::after {
+  content: "";
+}
+
+.aside {
+  width: 23%;
+}
 
 /*# sourceMappingURL=style.css.map */
