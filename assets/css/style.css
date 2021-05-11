@@ -188,6 +188,9 @@ header section start here
 .header__top__nav a {
   color: #fff;
 }
+.header__top__nav a:hover {
+  text-decoration: underline;
+}
 .header__top__nav__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -549,6 +552,12 @@ main .wrapper {
 }
 .article__content__social__item__facebook a, .article__content__social__item__linkdin a, .article__content__social__item__twitter a, .article__content__social__item__mail a {
   position: relative;
+  -webkit-transition: ease 0.4s;
+  -o-transition: ease 0.4s;
+  transition: ease 0.4s;
+}
+.article__content__social__item__facebook a:hover::after, .article__content__social__item__linkdin a:hover::after, .article__content__social__item__twitter a:hover::after, .article__content__social__item__mail a:hover::after {
+  background-color: #000;
 }
 .article__content__social__item__facebook a::after, .article__content__social__item__linkdin a::after, .article__content__social__item__twitter a::after, .article__content__social__item__mail a::after {
   content: "d";
@@ -705,6 +714,9 @@ footer section start here
 .footer__menu__item a {
   margin: 10px;
   color: #fff;
+}
+.footer__menu__item a:hover {
+  text-decoration: underline;
 }
 
 /*==================
